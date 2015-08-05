@@ -1,0 +1,4 @@
+0       1               2                  3                4
+ExpeId, Time Exp (secs), Trader1 Type, Trader1 Balance Sum, Trader1 NumberOfTransactions, Trader1 GainPerTransaction, Trader2 ...., Best Bid, Best Ask
+
+trial0000001, 000600, GVWY, 345, 2, 172.500000, SHVR, 161, 2, 80.500000, ZIC, 307, 2, 153.500000, ZIP, 3583, 26, 137.807692, 110, 113,

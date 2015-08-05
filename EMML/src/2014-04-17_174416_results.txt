@@ -1,0 +1,20 @@
+ SZIP:
+Total mean: 118.584765314
+ 2 robots: mean = 120.76, stdev = 20.908189783 
+ 4 robots: mean = 119.295, stdev = 16.1702419586 
+ 6 robots: mean = 122.57999998, stdev = 14.5556877022 
+ 8 robots: mean = 121.3475, stdev = 13.2328731291 
+ 10 robots: mean = 115.868, stdev = 11.5035027709 
+ 12 robots: mean = 116.14, stdev = 9.91339496792 
+ 14 robots: mean = 114.10285722, stdev = 10.9597887973 
+ ZIP:
+Total mean: 116.382401354
+ 14 robots: mean = 115.70714288, stdev = 10.3559926172 
+ 12 robots: mean = 117.28333328, stdev = 10.9729085033 
+ 10 robots: mean = 116.198, stdev = 14.1418879928 
+ 8 robots: mean = 119.155, stdev = 10.998964724 
+ 6 robots: mean = 117.56333332, stdev = 15.9135123517 
+ 4 robots: mean = 116.22, stdev = 18.5116611896 
+ 2 robots: mean = 112.55, stdev = 22.5646294009 
+Experiment group means Mann-Whitney U-test:
+ SZIP -  ZIP : u = 16.0, p-value=0.153342532952

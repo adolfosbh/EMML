@@ -1,0 +1,49 @@
+
+    def func1(t):
+        pi2 = math.pi * 2
+        c = math.pi*3000
+        wavelength = t/c
+        gradient = 100*t/(c/pi2)
+        amplitude = 100*t/(c/pi2)
+        offset = gradient + amplitude * math.sin(wavelength*t)
+        return int(round(offset,0))
+    def func2(t):
+        pi2 = math.pi * 2
+        c = math.pi*3000
+        wavelength = t/c
+        gradient = 100*t/(c/pi2)
+        amplitude = 100*t/(c/pi2)
+        offset = -(gradient + amplitude * math.sin(wavelength*t))
+        return int(round(offset,0))
+    #__plotFunction__()
+
+    market_session = 450.0
+    #_saveResults("1", "1_balances_004.csv", 4, 50, True)
+    launchExperiment(['CZIP', 'ZIP'], marketSessionTime=market_session)
+    launchExperiment(['GVWY', 'ZIP'], marketSessionTime=market_session)
+    launchExperiment(['GVWY', 'CZIP'], marketSessionTime=market_session)
+    launchExperiment(['GVWY', 'CZIP', 'ZIP'], marketSessionTime=market_session)
+
+
+    launchExperiment(['CZIP', 'ZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func2)
+    launchExperiment(['GVWY', 'ZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func2)
+    launchExperiment(['GVWY', 'CZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func2)
+    launchExperiment(['GVWY', 'CZIP', 'ZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func2)
+
+
+    launchExperiment(['CZIP', 'ZIP'], marketSessionTime=market_session, supplyFunc=func1, demandFunc=func2)
+    launchExperiment(['GVWY', 'ZIP'], marketSessionTime=market_session, supplyFunc=func1, demandFunc=func2)
+    launchExperiment(['GVWY', 'CZIP'], marketSessionTime=market_session, supplyFunc=func1, demandFunc=func2)
+    launchExperiment(['GVWY', 'CZIP', 'ZIP'], marketSessionTime=market_session, supplyFunc=func1, demandFunc=func2)
+
+
+    launchExperiment(['CZIP', 'ZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func1)
+    launchExperiment(['GVWY', 'ZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func1)
+    launchExperiment(['GVWY', 'CZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func1)
+    launchExperiment(['GVWY', 'CZIP', 'ZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func1)
+
+
+    launchExperiment(['GVWY', 'CZIP', 'ZIP', 'ZIC', 'SHVR'], marketSessionTime=market_session, n_traders_per_type=3)
+    launchExperiment(['GVWY', 'CZIP', 'ZIP', 'ZIC', 'SHVR'], marketSessionTime=market_session, n_traders_per_type=3, supplyFunc=func2, demandFunc=func2)
+    launchExperiment(['GVWY', 'CZIP', 'ZIP', 'ZIC', 'SHVR'], marketSessionTime=market_session, n_traders_per_type=3, supplyFunc=func1, demandFunc=func2)
+    launchExperiment(['GVWY', 'CZIP', 'ZIP', 'ZIC', 'SHVR'], marketSessionTime=market_session, n_traders_per_type=3, supplyFunc=func2, demandFunc=func1)

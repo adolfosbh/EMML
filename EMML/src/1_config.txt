@@ -1,0 +1,4 @@
+
+SessionMarketTime = 180.0
+EqualRatioN = 4
+TraderTypes = GVWY, SHVR, ZIC, ZIP

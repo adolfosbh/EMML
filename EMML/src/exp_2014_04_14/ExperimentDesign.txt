@@ -1,0 +1,40 @@
+
+    def func1(t):
+        pi2 = math.pi * 2
+        c = math.pi*3000
+        wavelength = t/c
+        gradient = 100*t/(c/pi2)
+        amplitude = 100*t/(c/pi2)
+        offset = gradient + amplitude * math.sin(wavelength*t)
+        return int(round(offset,0))
+    def func2(t):
+        pi2 = math.pi * 2
+        c = math.pi*3000
+        wavelength = t/c
+        gradient = 100*t/(c/pi2)
+        amplitude = 100*t/(c/pi2)
+        offset = -(gradient + amplitude * math.sin(wavelength*t))
+        return int(round(offset,0))
+    #__plotFunction__()
+
+    market_session = 450.0
+    #_saveResults("1", "1_balances_004.csv", 4, 50, True)
+    launchExperiment(['SZIP', 'ZIP'], marketSessionTime=market_session)
+    launchExperiment(['SNPR', 'ZIP'], marketSessionTime=market_session)
+    launchExperiment(['SNPR', 'SZIP'], marketSessionTime=market_session)
+    launchExperiment(['SZIP','SNPR', 'ZIP'], marketSessionTime=market_session)
+
+    launchExperiment(['SZIP', 'ZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func2)
+    launchExperiment(['SNPR', 'ZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func2)
+    launchExperiment(['SNPR', 'SZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func2)
+    launchExperiment(['SZIP','SNPR', 'ZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func2)
+
+    launchExperiment(['SZIP', 'ZIP'], marketSessionTime=market_session, supplyFunc=func1, demandFunc=func2)
+    launchExperiment(['SNPR', 'ZIP'], marketSessionTime=market_session, supplyFunc=func1, demandFunc=func2)
+    launchExperiment(['SNPR', 'SZIP'], marketSessionTime=market_session, supplyFunc=func1, demandFunc=func2)
+    launchExperiment(['SZIP','SNPR', 'ZIP'], marketSessionTime=market_session, supplyFunc=func1, demandFunc=func2)
+
+    launchExperiment(['SZIP', 'ZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func1)
+    launchExperiment(['SNPR', 'ZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func1)
+    launchExperiment(['SNPR', 'SZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func1)
+    launchExperiment(['SZIP','SNPR', 'ZIP'], marketSessionTime=market_session, supplyFunc=func2, demandFunc=func1)

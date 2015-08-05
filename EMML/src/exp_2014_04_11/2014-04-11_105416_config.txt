@@ -1,0 +1,12 @@
+Trader types = ['GVWY', 'ZIP']
+Number of traders per type= 4
+Number of trials per traders ratio= 50
+Supply start value = 90
+Supply step mode = fixed
+Demand start value = 110
+Demand step mode = fixed
+Replenishment interval = 30
+Scheduler time mode= drip-poisson
+Market session open time=0.0
+Market session close time= 450.0
+Dump each trace = False
